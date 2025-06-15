@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Smartphone, Globe, Database, Shield, Zap, CheckCircle, Mail, Phone, MapPin, Laptop, BrainCog } from "lucide-react"
+import { Smartphone, Globe, Database, Shield, Zap, CheckCircle, Mail, Phone, MapPin, Laptop, BrainCog, UserSearch } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { AnimatedHeader } from "@/components/animated-header"
@@ -88,7 +88,7 @@ export default function BaicodeLanding() {
                   width="800"
                   height="800"
                   alt="Desarrollo de Software"
-                  className="aspect-video overflow-hidden rounded-xl object-cover"
+                  className="aspect-video rounded-xl object-contain"
                 />
               </div>
             </div>
@@ -203,29 +203,53 @@ export default function BaicodeLanding() {
                 </CardContent>
               </Card>
 
-              <Card className="border-blue-100 hover:border-blue-300 transition-colors">
-                <CardHeader className="text-center">
-                  <BrainCog className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                  <CardTitle className="text-blue-900">Productos de IA</CardTitle>
-                  <CardDescription>Desarrollo de soluciones inteligentes adaptadas a tu negocio</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-sm text-gray-600">
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="h-4 w-4 text-green-500" />
-                      Modelos de machine learning
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="h-4 w-4 text-green-500" />
-                      Integración con tus sistemas
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="h-4 w-4 text-green-500" />
-                      Análisis de datos avanzado
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
+                <Card className="border-blue-100 hover:border-blue-300 transition-colors">
+                  <CardHeader className="text-center">
+                    <BrainCog className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+                    <CardTitle className="text-blue-900">Productos de IA</CardTitle>
+                    <CardDescription>Desarrollo de soluciones inteligentes adaptadas a tu negocio</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-2 text-sm text-gray-600">
+                      <li className="flex items-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-green-500" />
+                        Modelos de machine learning
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-green-500" />
+                        Integración con tus sistemas
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-green-500" />
+                        Análisis de datos avanzado
+                      </li>
+                    </ul>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-blue-100 hover:border-blue-300 transition-colors">
+                  <CardHeader className="text-center">
+                    <UserSearch className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+                    <CardTitle className="text-blue-900">Recruiting IT</CardTitle>
+                    <CardDescription>Búsqueda y selección de talento tecnológico</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-2 text-sm text-gray-600">
+                      <li className="flex items-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-green-500" />
+                        Perfiles a medida
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-green-500" />
+                        Evaluación técnica
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-green-500" />
+                        Integración rápida
+                      </li>
+                    </ul>
+                  </CardContent>
+                </Card>
             </div>
           </div>
         </section>
@@ -274,7 +298,7 @@ export default function BaicodeLanding() {
                   width="500"
                   height="400"
                   alt="Equipo Baicode"
-                  className="aspect-square overflow-hidden rounded-xl object-cover"
+                  className="aspect-square rounded-xl object-contain"
                 />
               </div>
             </div>
