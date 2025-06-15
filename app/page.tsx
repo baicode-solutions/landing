@@ -12,6 +12,9 @@ import { SmoothScroll } from "@/components/smooth-scroll"
 import { Logo } from "@/components/logo"
 
 export default function BaicodeLanding() {
+  let content_1 = "/images/content_4.png"
+  let content_2 = "/images/content_2.png"
+
   return (
     <div className="flex flex-col min-h-screen bg-white">
       <SmoothScroll />
@@ -81,9 +84,9 @@ export default function BaicodeLanding() {
               </div>
               <div className="flex items-center justify-center">
                 <Image
-                  src="/placeholder.svg?height=400&width=600"
-                  width="600"
-                  height="400"
+                  src={content_1}
+                  width="800"
+                  height="800"
                   alt="Desarrollo de Software"
                   className="aspect-video overflow-hidden rounded-xl object-cover"
                 />
@@ -267,7 +270,7 @@ export default function BaicodeLanding() {
               </div>
               <div className="flex items-center justify-center">
                 <Image
-                  src="/placeholder.svg?height=400&width=500"
+                  src={content_2}
                   width="500"
                   height="400"
                   alt="Equipo Baicode"
