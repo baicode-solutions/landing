@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Smartphone, Globe, Database, Shield, Zap, CheckCircle, Mail, Phone, MapPin } from "lucide-react"
+import { Smartphone, Globe, Database, Shield, Zap, CheckCircle, Mail, Phone, MapPin, Laptop, BrainCog } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { AnimatedHeader } from "@/components/animated-header"
@@ -171,6 +171,54 @@ export default function BaicodeLanding() {
                     <li className="flex items-center gap-2">
                       <CheckCircle className="h-4 w-4 text-green-500" />
                       Bases de datos optimizadas
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="border-blue-100 hover:border-blue-300 transition-colors">
+                <CardHeader className="text-center">
+                  <Laptop className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+                  <CardTitle className="text-blue-900">Consultoría IT</CardTitle>
+                  <CardDescription>Asesoría experta para optimizar tu infraestructura y procesos tecnológicos</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 text-sm text-gray-600">
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      Estrategia tecnológica
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      Migración a la nube
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      Seguridad y buenas prácticas
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="border-blue-100 hover:border-blue-300 transition-colors">
+                <CardHeader className="text-center">
+                  <BrainCog className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+                  <CardTitle className="text-blue-900">Productos de IA</CardTitle>
+                  <CardDescription>Desarrollo de soluciones inteligentes adaptadas a tu negocio</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 text-sm text-gray-600">
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      Modelos de machine learning
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      Integración con tus sistemas
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      Análisis de datos avanzado
                     </li>
                   </ul>
                 </CardContent>
