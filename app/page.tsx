@@ -7,11 +7,55 @@ import { Textarea } from "@/components/ui/textarea"
 import { Smartphone, Globe, Database, Shield, Zap, CheckCircle, Mail, Phone, MapPin, Laptop, BrainCog, UserSearch } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import React, { useState } from "react"
 import { AnimatedHeader } from "@/components/animated-header"
 import { SmoothScroll } from "@/components/smooth-scroll"
 import { Logo } from "@/components/logo"
+import { Toaster } from "@/components/ui/sonner"
+import { toast } from "@/hooks/use-toast"
 
 export default function BaicodeLanding() {
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  })
+  const [loading, setLoading] = useState(false)
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setForm({ ...form, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setLoading(true)
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+
+      if (res.ok) {
+        toast({
+          title: 'Mensaje enviado',
+          description: 'Te contactaremos pronto.',
+        })
+        setForm({ name: '', email: '', subject: '', message: '' })
+      } else {
+        toast({ title: 'Error', description: 'No se pudo enviar el mensaje.' })
+      }
+    } catch {
+      toast({ title: 'Error', description: 'No se pudo enviar el mensaje.' })
+    } finally {
+      setLoading(false)
+    }
+  }
+
+      <Toaster />
   let content_1 = "/images/content_4.png"
   let content_2 = "/images/content_2.png"
 
@@ -319,23 +363,27 @@ export default function BaicodeLanding() {
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
                 <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-gray-100">
-                  Solicitar Cotización
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-blue-600"
-                >
-                  Agendar Consulta
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Contact Section */}
-        <section id="contacto" className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
+                    <span className="text-gray-600">info@baicode.com.ar</span>
+                <CardContent>
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <label className="text-sm font-medium">Nombre</label>
+                        <Input name="name" value={form.name} onChange={handleChange} placeholder="Tu nombre" />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-sm font-medium">Email</label>
+                        <Input name="email" type="email" value={form.email} onChange={handleChange} placeholder="tu@email.com" />
+                      </div>
+                    </div>
+                      <label className="text-sm font-medium">Asunto</label>
+                      <Input name="subject" value={form.subject} onChange={handleChange} placeholder="¿En qué podemos ayudarte?" />
+                      <label className="text-sm font-medium">Mensaje</label>
+                      <Textarea name="message" value={form.message} onChange={handleChange} placeholder="Cuéntanos sobre tu proyecto..." className="min-h-[100px]" />
+                    <Button type="submit" disabled={loading} className="w-full bg-blue-600 hover:bg-blue-700">
+                      {loading ? 'Enviando...' : 'Enviar Mensaje'}
+                    </Button>
+                  </form>
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
               <div className="space-y-4">
                 <div className="space-y-2">
