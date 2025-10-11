@@ -34,7 +34,6 @@ import { SmoothScroll } from "@/components/smooth-scroll";
 import { Logo } from "@/components/logo";
 import { AISection } from "@/components/ai-section";
 
-export const runtime = "edge";
 export default function BaicodeLanding() {
   // Estado del formulario de contacto
   const [formData, setFormData] = useState({
