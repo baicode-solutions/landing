@@ -101,13 +101,20 @@ export default function AboutPage() {
                     <div className="relative mx-auto lg:mx-0 w-48 h-48 mb-6">
                       <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl transform rotate-6 group-hover:rotate-12 transition-transform duration-300"></div>
                       <div className="relative bg-gray-200 rounded-2xl w-full h-full flex items-center justify-center overflow-hidden">
-                        <User className="h-24 w-24 text-gray-400" />
+                        <Image
+                          src="/images/lolivera.jpg"
+                          alt="Olivera Lucas - Solution Architect"
+                          width={192}
+                          height={192}
+                          className="w-full h-full object-cover rounded-2xl"
+                          priority
+                        />
                       </div>
                     </div>
 
                     <div className="space-y-2 mb-6">
                       <h3 className="text-2xl font-bold text-gray-900">
-                        [Nombre del Solution Architect]
+                        Olivera Lucas
                       </h3>
                       <p className="text-blue-600 font-semibold">
                         Solution Architect & Project Lead

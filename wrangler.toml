@@ -4,7 +4,12 @@ compatibility_date = "2024-12-30"
 compatibility_flags = ["nodejs_compat", "global_fetch_strictly_public"]
 
 # For Cloudflare Pages
-pages_build_output_dir = ".open-next"
+pages_build_output_dir = ".open-next/assets"
+
+# Build configuration for Pages
+[build]
+command = "npm run build:pages"
+cwd = ""
 
 # Environment variables
 [env.production]
