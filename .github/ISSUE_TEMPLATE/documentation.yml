@@ -1,0 +1,62 @@
+name: 📚 Documentation
+description: Mejoras o correcciones en la documentación
+title: "[DOCS]: "
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ¡Ayúdanos a mejorar la documentación del proyecto!
+
+  - type: dropdown
+    id: doc-type
+    attributes:
+      label: 📝 Tipo de Documentación
+      description: ¿Qué tipo de documentación necesita atención?
+      options:
+        - README.md
+        - CONTRIBUTING.md
+        - Comentarios en código
+        - Setup/Installation
+        - API Documentation
+        - Deployment Guide
+        - Troubleshooting
+        - Examples/Tutorials
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue
+    attributes:
+      label: 🔍 Problema Identificado
+      description: ¿Qué está mal o falta en la documentación actual?
+      placeholder: La documentación actual...
+    validations:
+      required: true
+
+  - type: textarea
+    id: improvement
+    attributes:
+      label: ✨ Mejora Sugerida
+      description: ¿Cómo se puede mejorar o qué se debería agregar?
+      placeholder: Se podría mejorar agregando...
+    validations:
+      required: true
+
+  - type: textarea
+    id: location
+    attributes:
+      label: 📍 Ubicación
+      description: ¿Dónde se encuentra el problema? (archivo, sección, línea)
+      placeholder: En el archivo X, sección Y...
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: ✔️ Checklist
+      options:
+        - label: He revisado la documentación existente
+          required: true
+        - label: El problema no ha sido reportado anteriormente
+          required: true

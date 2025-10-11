@@ -1,0 +1,109 @@
+name: 🐛 Bug Report
+description: Reportar un bug o problema en el landing page
+title: "[BUG]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por reportar este bug! Por favor completa la información a continuación para ayudarnos a resolverlo.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 📝 Descripción del Bug
+      description: Descripción clara y concisa del problema
+      placeholder: Describe qué está pasando...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 🔄 Pasos para Reproducir
+      description: Pasos detallados para reproducir el problema
+      placeholder: |
+        1. Ir a '...'
+        2. Hacer click en '...'
+        3. Scroll hasta '...'
+        4. Ver error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: ✅ Comportamiento Esperado
+      description: Qué esperabas que pasara
+      placeholder: Describe el comportamiento esperado...
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: ❌ Comportamiento Actual
+      description: Qué está pasando en su lugar
+      placeholder: Describe lo que realmente pasa...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: 🌐 Navegador(es)
+      description: En qué navegador(es) ocurre el problema
+      multiple: true
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Edge
+        - Opera
+        - Otro
+    validations:
+      required: true
+
+  - type: dropdown
+    id: device
+    attributes:
+      label: 📱 Dispositivo
+      description: Tipo de dispositivo donde ocurre
+      options:
+        - Desktop
+        - Tablet
+        - Mobile
+        - Todos
+    validations:
+      required: true
+
+  - type: input
+    id: os
+    attributes:
+      label: 💻 Sistema Operativo
+      description: Sistema operativo y versión
+      placeholder: ej. Windows 11, macOS 14, Ubuntu 22.04
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: ℹ️ Información Adicional
+      description: Cualquier información adicional que pueda ayudar
+      placeholder: |
+        - Enlaces relevantes
+        - Configuración especial
+        - Errores de consola
+        - Screenshots (puedes arrastrar y soltar imágenes aquí)
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: ✔️ Checklist
+      description: Confirma lo siguiente antes de enviar
+      options:
+        - label: He buscado en issues existentes y este bug no ha sido reportado
+          required: true
+        - label: He probado con la última versión del sitio
+          required: true
+        - label: El bug es reproducible y he incluido los pasos
+          required: true

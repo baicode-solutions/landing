@@ -1,0 +1,105 @@
+name: ✨ Feature Request
+description: Sugerir una nueva funcionalidad o mejora
+title: "[FEATURE]: "
+labels: ["enhancement", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ¡Gracias por tu sugerencia! Nos ayuda a mejorar el landing page de Baicode.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 🤔 ¿Qué problema resuelve?
+      description: Describe el problema o necesidad que esta funcionalidad abordaría
+      placeholder: Actualmente no es posible...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: 💡 Solución Propuesta
+      description: Describe la funcionalidad que te gustaría ver
+      placeholder: Me gustaría que...
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 🔄 Alternativas Consideradas
+      description: Otras soluciones o funcionalidades que hayas considerado
+      placeholder: He considerado...
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 📈 Prioridad
+      description: ¿Qué tan importante es esta funcionalidad?
+      options:
+        - Baja - Nice to have
+        - Media - Sería útil
+        - Alta - Muy importante
+        - Crítica - Bloqueante
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: 🏷️ Categoría
+      description: ¿A qué área pertenece esta funcionalidad?
+      options:
+        - UI/UX - Interfaz de usuario
+        - Performance - Rendimiento
+        - SEO - Optimización para buscadores
+        - Accessibility - Accesibilidad
+        - Content - Contenido
+        - Navigation - Navegación
+        - Responsive - Diseño responsive
+        - Animation - Animaciones
+        - Integration - Integraciones
+        - Analytics - Analíticas
+        - Other - Otro
+
+  - type: textarea
+    id: mockup
+    attributes:
+      label: 🎨 Mockup o Diseño
+      description: Si tienes mockups, wireframes o referencias visuales
+      placeholder: |
+        Puedes arrastrar y soltar imágenes aquí o incluir enlaces a diseños.
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: ✅ Criterios de Aceptación
+      description: ¿Cómo sabremos que esta funcionalidad está completa?
+      placeholder: |
+        - [ ] El usuario puede...
+        - [ ] La funcionalidad funciona en móvil
+        - [ ] Se mantiene el rendimiento...
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: ℹ️ Contexto Adicional
+      description: Cualquier información adicional relevante
+      placeholder: |
+        - Enlaces a referencias
+        - Casos de uso específicos
+        - Consideraciones técnicas
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: ✔️ Checklist
+      options:
+        - label: He buscado en issues existentes y esta funcionalidad no ha sido solicitada
+          required: true
+        - label: Esta funcionalidad se alinea con los objetivos del landing page
+          required: true
+        - label: He proporcionado suficiente contexto y detalles
+          required: true

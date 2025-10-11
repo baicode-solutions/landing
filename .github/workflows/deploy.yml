@@ -1,0 +1,76 @@
+---
+name: 🚀 Deploy to Production
+on:
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
+
+jobs:
+    build-and-test:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: 📦 Checkout
+              uses: actions/checkout@v4
+
+            - name: 📦 Setup pnpm
+              uses: pnpm/action-setup@v2
+              with:
+                  version: latest
+
+            - name: 📦 Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: "22"
+                  cache: "pnpm"
+
+            - name: 📦 Install dependencies
+              run: pnpm install --frozen-lockfile
+
+            - name: 🔍 Run TypeScript check
+              run: pnpm run type-check
+
+            - name: 🔍 Run linting
+              run: pnpm run lint
+
+            - name: 🏗️ Build application
+              run: pnpm run build
+
+            - name: 🧪 Run tests (if any)
+              run: pnpm test --passWithNoTests
+
+    deploy-preview:
+        needs: build-and-test
+        runs-on: ubuntu-latest
+        if: github.event_name == 'pull_request'
+
+        steps:
+            - name: 📦 Checkout
+              uses: actions/checkout@v4
+
+            - name: 🚀 Deploy Preview
+              uses: amondnet/vercel-action@v25
+              with:
+                  vercel-token: ${{ secrets.VERCEL_TOKEN }}
+                  vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+                  vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+                  scope: ${{ secrets.VERCEL_ORG_ID }}
+
+    deploy-production:
+        needs: build-and-test
+        runs-on: ubuntu-latest
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+
+        steps:
+            - name: 📦 Checkout
+              uses: actions/checkout@v4
+
+            - name: 🚀 Deploy to Production
+              uses: amondnet/vercel-action@v25
+              with:
+                  vercel-token: ${{ secrets.VERCEL_TOKEN }}
+                  vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+                  vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+                  vercel-args: "--prod"
+                  scope: ${{ secrets.VERCEL_ORG_ID }}

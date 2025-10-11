@@ -1,0 +1,85 @@
+---
+name: 🔍 Code Quality Check
+on:
+    pull_request:
+        branches: [main, develop]
+    push:
+        branches: [main, develop]
+
+jobs:
+    quality-check:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: 📦 Checkout code
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+
+            - name: 📦 Setup pnpm
+              uses: pnpm/action-setup@v2
+              with:
+                  version: latest
+
+            - name: 📦 Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: "22"
+                  cache: "pnpm"
+
+            - name: 📦 Install dependencies
+              run: pnpm install --frozen-lockfile
+
+            - name: 🔍 TypeScript Check
+              run: npx tsc --noEmit
+
+            - name: 🔍 ESLint Check
+              run: pnpm run lint
+
+            - name: 🔍 Prettier Check
+              run: npx prettier --check .
+
+            - name: 🏗️ Build Check
+              run: pnpm run build
+
+            - name: 📊 Bundle Analyzer
+              if: github.event_name == 'pull_request'
+              run: |
+                  pnpm run build
+                  npx @next/bundle-analyzer .next
+
+    lighthouse:
+        runs-on: ubuntu-latest
+        if: github.event_name == 'pull_request'
+
+        steps:
+            - name: 📦 Checkout
+              uses: actions/checkout@v4
+
+            - name: 📦 Setup pnpm
+              uses: pnpm/action-setup@v2
+              with:
+                  version: latest
+
+            - name: 📦 Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: "22"
+                  cache: "pnpm"
+
+            - name: 📦 Install dependencies
+              run: pnpm install --frozen-lockfile
+
+            - name: 🏗️ Build
+              run: pnpm run build
+
+            - name: 🚀 Start server
+              run: pnpm start &
+
+            - name: 💡 Run Lighthouse CI
+              uses: treosh/lighthouse-ci-action@v10
+              with:
+                  urls: |
+                      http://localhost:3000
+                  uploadArtifacts: true
+                  temporaryPublicStorage: true
