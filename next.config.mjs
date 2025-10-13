@@ -9,6 +9,16 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  transpilePackages: [
+    'framer-motion',
+    'lucide-react',
+  ],
+  // Optimización para build
+  experimental: {
+    optimizePackageImports: ['lucide-react', 'recharts'],
+  },
+  // Importante para Cloudflare
+  outputFileTracing: true,
 };
 
 export default nextConfig;

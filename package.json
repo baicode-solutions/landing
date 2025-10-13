@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
-    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "next build && npx @opennextjs/cloudflare build && wrangler pages deploy .open-next --project-name=baicode-landing",
+    "preview": "next build && npx @opennextjs/cloudflare build && wrangler pages dev .open-next",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv ./cloudflare-env.d.ts",
     "lint": "next lint"
   },
