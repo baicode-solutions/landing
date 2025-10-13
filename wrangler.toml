@@ -1,7 +1,19 @@
-# wrangler.toml — configuración mínima para Cloudflare Pages
+# wrangler.toml — configuración para Cloudflare Pages + OpenNext
 name = "baicode-landing"
 compatibility_date = "2025-03-01"
 compatibility_flags = ["nodejs_compat"]
 
-main = ".worker-next/index.mjs"
-assets = { directory = ".worker-next/assets", binding = "ASSETS" }
+# Directorio principal de salida de OpenNext
+pages_build_output_dir = ".open-next"
+
+# El worker que ejecuta tu app de Next.js
+main = ".open-next/worker.js"
+
+# Archivos estáticos generados por OpenNext
+[assets]
+binding = "ASSETS"
+directory = ".open-next/assets"
+
+# Observabilidad opcional
+[observability]
+enabled = true
