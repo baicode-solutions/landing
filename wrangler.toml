@@ -6,12 +6,12 @@ compatibility_flags = ["nodejs_compat"]
 # Directorio principal de salida de OpenNext
 pages_build_output_dir = ".open-next"
 
-# El worker que ejecuta tu app de Next.js
+# El worker generado por OpenNext
 main = ".open-next/worker.js"
 
 # Archivos estáticos generados por OpenNext
 [assets]
-binding = "ASSETS"
+binding = "NEXT_ASSETS"
 directory = ".open-next/assets"
 
 # Observabilidad opcional
