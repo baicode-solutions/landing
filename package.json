@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && npx @opennextjs/cloudflare build",
     "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
     "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
     "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
@@ -14,7 +14,6 @@
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
     "@hookform/resolvers": "^3.9.1",
-    "@opennextjs/cloudflare": "^1.10.1",
     "@radix-ui/react-accordion": "1.2.2",
     "@radix-ui/react-alert-dialog": "1.1.4",
     "@radix-ui/react-aspect-ratio": "1.1.1",
@@ -67,6 +66,7 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@opennextjs/cloudflare": "^1.10.1",
     "@types/node": "^22",
     "@types/nodemailer": "^7.0.2",
     "@types/react": "^19",
