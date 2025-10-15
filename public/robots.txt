@@ -1,0 +1,67 @@
+# robots.txt para Baicode - Desarrollo de Software e IA
+# https://baicode.com/robots.txt
+
+User-agent: *
+Allow: /
+Allow: /servicios/
+Allow: /inteligencia-artificial
+Allow: /sobre-nosotros
+Allow: /images/
+Allow: /manifest.json
+Allow: /.well-known/
+
+# Disallow admin or sensitive areas (if any)
+Disallow: /api/
+Disallow: /_next/
+Disallow: /og-generator.html
+
+# Allow important bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# AI/LLM Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Social Media Crawlers
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+# Sitemap location
+Sitemap: https://baicode.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1

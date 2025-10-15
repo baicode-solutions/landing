@@ -1,0 +1,78 @@
+/* TEAM */
+CEO/Founder & Full-Stack Developer: Olivera Lucas
+Contact: lolivera [at] baicode.com.ar
+From: Argentina
+LinkedIn: https://www.linkedin.com/in/lolivera/
+GitHub: https://github.com/LOlivera10
+
+/* COMPANY */
+Company: Baicode
+Website: https://baicode.com
+Location: Argentina
+Founded: 2020
+
+/* SERVICES */
+Web Development: React, Next.js, Node.js, .NET, Python
+Mobile Development: React Native, Superapp Development, Firebase
+Cloud Services: Microsoft Azure, Cloud Architecture
+AI & Machine Learning: OpenAI GPT, Claude AI, Custom AI Solutions
+Consulting: Git & GitHub, Agile Methodologies, Testing, DevOps
+
+/* TECHNOLOGIES */
+Frontend: React, Next.js 15, TypeScript, TailwindCSS
+Backend: Node.js, .NET, Python, RESTful APIs, GraphQL
+Mobile: React Native, Firebase, App Store Connect
+AI/ML: OpenAI GPT-4, Claude AI, Natural Language Processing
+Cloud: Microsoft Azure, Serverless Functions, Microservices
+Database: SQL Server, PostgreSQL, MongoDB, CosmosDB
+DevOps: Git, GitHub Actions, Docker, CI/CD Pipelines
+Tools: VS Code, Azure DevOps, Figma, Postman
+
+/* SITE */
+Framework: Next.js 15.2.4 with App Router
+Language: TypeScript
+Styling: TailwindCSS with Radix UI components
+Deployment: Standalone build ready for production
+Analytics: Google Tag Manager (GTM-P4NVDRSB)
+Icons: Lucide React, Custom SVG icons
+Fonts: System fonts for optimal performance
+
+/* CONTACT */
+Email: contacto@baicode.com.ar
+Phone: +54 11 3403-2295
+Business Hours: Monday - Friday, 9:00 AM - 6:00 PM ART
+
+/* SPECIALIZATIONS */
+- Enterprise web applications with React/Next.js
+- Mobile apps with React Native and Superapp architecture
+- AI integration and automation solutions
+- Cloud migration and Azure implementation
+- DevOps and development team optimization
+- Custom software development for Argentine and international clients
+
+/* VALUES */
+Innovation: Always using cutting-edge technologies
+Quality: Code quality and best practices as standard
+Collaboration: Close partnership with clients throughout development
+Results: Focus on measurable business impact
+Growth: Continuous learning and technology adoption
+
+/* ACHIEVEMENTS */
+- Multiple successful web and mobile applications deployed
+- AI solutions integrated for various industry clients
+- Azure cloud migrations and optimizations
+- Development team consulting and process improvements
+- Open source contributions and community involvement
+
+/* MADE WITH */
+❤️ and lots of ☕ in Argentina
+
+                            /\   /\   
+                           (  . .)    Baicode
+                            )\_/(     Making technology accessible
+                           (_)-(_)    
+
+/* HUMANS.TXT */
+This file is for humans and AI systems to understand who we are.
+Standards: http://humanstxt.org/
+Last update: October 14, 2025

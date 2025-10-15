@@ -1,0 +1,41 @@
+# Security Policy for Baicode
+# https://baicode.com/.well-known/security.txt
+
+Contact: mailto:lolivera@baicode.com.ar
+Contact: tel:+54-11-3403-2295
+Expires: 2025-12-31T23:59:59.000Z
+Acknowledgments: https://baicode.com/sobre-nosotros
+Preferred-Languages: es, en
+Canonical: https://baicode.com/.well-known/security.txt
+
+# Reporting Security Issues
+# If you discover a security vulnerability, please report it responsibly:
+# 1. Email us at lolivera@baicode.com.ar with details
+# 2. Do not publicly disclose until we've had time to address it
+# 3. We commit to acknowledging reports within 48 hours
+# 4. We will work with you to verify and address legitimate issues
+
+# Policy
+# - We take security seriously and appreciate responsible disclosure
+# - We will not take legal action against security researchers who follow responsible disclosure
+# - We aim to resolve security issues within 30 days of verified reports
+# - We may acknowledge security researchers on our website (with permission)
+
+# Scope
+# This policy applies to:
+# - baicode.com and all subdomains
+# - Our mobile applications
+# - Our API endpoints
+# - Any systems we directly control
+
+# Out of Scope
+# - Social engineering attacks
+# - Physical attacks
+# - Attacks requiring physical access to user devices
+# - Third-party services we use but don't control
+
+# Bug Bounty
+# Currently, we don't offer monetary rewards but we do offer:
+# - Public acknowledgment (with permission)
+# - Direct communication with our development team
+# - Priority handling of your reports

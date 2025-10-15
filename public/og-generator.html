@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Open Graph - Baicode</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f3f4f6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .preview {
+            border: 2px solid #ddd;
+            margin: 20px 0;
+            display: inline-block;
+        }
+
+        button {
+            background: #2563eb;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        .instructions {
+            background: #f0f9ff;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+            border-left: 4px solid #2563eb;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🚀 Generador de Imágenes Open Graph - Baicode</h1>
+
+        <div class="instructions">
+            <h3>📋 Instrucciones:</h3>
+            <ol>
+                <li>Haz clic en los botones de descarga para generar las imágenes</li>
+                <li>Guarda las imágenes como <code>og-image.jpg</code> y <code>twitter-image.jpg</code></li>
+                <li>Colócalas en <code>public/images/</code> reemplazando las temporales</li>
+                <li>Verifica en Discord/Slack que la vista previa muestre correctamente</li>
+            </ol>
+        </div>
+
+        <h2>Open Graph Image (1200x630)</h2>
+        <div class="preview">
+            <svg width="600" height="315" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#3b82f6;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <rect width="1200" height="630" fill="url(#bgGradient)" />
+                <rect x="100" y="150" width="1000" height="330" fill="white" fill-opacity="0.05" rx="20" />
+                <rect x="150" y="200" width="80" height="80" fill="white" rx="10" />
+                <text x="190" y="250" font-family="Arial, sans-serif" font-size="36" font-weight="bold"
+                    text-anchor="middle" fill="#2563eb">B</text>
+                <text x="280" y="230" font-family="Arial, sans-serif" font-size="48" font-weight="bold"
+                    fill="white">Baicode</text>
+                <text x="280" y="270" font-family="Arial, sans-serif" font-size="24" fill="#e2e8f0">Desarrollo de
+                    Software e Inteligencia Artificial</text>
+                <text x="150" y="340" font-family="Arial, sans-serif" font-size="20" font-weight="500" fill="#cbd5e1">🌐
+                    Desarrollo Web</text>
+                <text x="400" y="340" font-family="Arial, sans-serif" font-size="20" font-weight="500" fill="#cbd5e1">📱
+                    Apps Móviles</text>
+                <text x="150" y="380" font-family="Arial, sans-serif" font-size="20" font-weight="500" fill="#cbd5e1">🤖
+                    Inteligencia Artificial</text>
+                <text x="400" y="380" font-family="Arial, sans-serif" font-size="20" font-weight="500" fill="#cbd5e1">💼
+                    Consulting IT</text>
+                <text x="150" y="430" font-family="Arial, sans-serif" font-size="18" fill="#94a3b8">baicode.com</text>
+                <text x="700" y="430" font-family="Arial, sans-serif" font-size="18" fill="#94a3b8">+54 11
+                    3403-2295</text>
+            </svg>
+        </div>
+        <br>
+        <button onclick="downloadOG()">📥 Descargar Open Graph (1200x630)</button>
+
+        <h2>Twitter Card Image (1200x600)</h2>
+        <div class="preview">
+            <svg width="600" height="300" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="twitterBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#1e40af;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#2563eb;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#3730a3;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <rect width="1200" height="600" fill="url(#twitterBg)" />
+                <g transform="translate(600, 300)">
+                    <circle cx="0" cy="-80" r="60" fill="white" opacity="0.95" />
+                    <text x="0" y="-60" font-family="Arial, sans-serif" font-size="42" font-weight="bold"
+                        text-anchor="middle" fill="#2563eb">B</text>
+                    <text x="0" y="20" font-family="Arial, sans-serif" font-size="56" font-weight="bold"
+                        text-anchor="middle" fill="white">Baicode</text>
+                    <text x="0" y="60" font-family="Arial, sans-serif" font-size="28" text-anchor="middle"
+                        fill="#e2e8f0">Soluciones Tecnológicas Innovadoras</text>
+                    <text x="-150" y="120" font-family="Arial, sans-serif" font-size="18" text-anchor="middle"
+                        fill="#cbd5e1">Web</text>
+                    <text x="-50" y="120" font-family="Arial, sans-serif" font-size="18" text-anchor="middle"
+                        fill="#cbd5e1">Mobile</text>
+                    <text x="50" y="120" font-family="Arial, sans-serif" font-size="18" text-anchor="middle"
+                        fill="#cbd5e1">IA</text>
+                    <text x="150" y="120" font-family="Arial, sans-serif" font-size="18" text-anchor="middle"
+                        fill="#cbd5e1">Consulting</text>
+                    <text x="0" y="160" font-family="Arial, sans-serif" font-size="20" text-anchor="middle"
+                        fill="#94a3b8">baicode.com</text>
+                </g>
+            </svg>
+        </div>
+        <br>
+        <button onclick="downloadTwitter()">📥 Descargar Twitter Card (1200x600)</button>
+
+        <div class="instructions" style="margin-top: 30px;">
+            <h3>🔍 Verificación:</h3>
+            <ul>
+                <li><strong>Discord:</strong> Comparte el link y verifica que muestre la imagen correcta</li>
+                <li><strong>Facebook Debugger:</strong> <a href="https://developers.facebook.com/tools/debug/"
+                        target="_blank">https://developers.facebook.com/tools/debug/</a></li>
+                <li><strong>Twitter Card Validator:</strong> <a href="https://cards-dev.twitter.com/validator"
+                        target="_blank">https://cards-dev.twitter.com/validator</a></li>
+                <li><strong>LinkedIn Inspector:</strong> <a href="https://www.linkedin.com/post-inspector/"
+                        target="_blank">https://www.linkedin.com/post-inspector/</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function downloadOG() {
+            const svg = document.querySelector('svg[viewBox="0 0 1200 630"]');
+            const canvas = document.createElement('canvas');
+            canvas.width = 1200;
+            canvas.height = 630;
+            const ctx = canvas.getContext('2d');
+
+            const data = new XMLSerializer().serializeToString(svg);
+            const img = new Image();
+            img.onload = function () {
+                ctx.drawImage(img, 0, 0);
+                const link = document.createElement('a');
+                link.download = 'og-image.jpg';
+                link.href = canvas.toDataURL('image/jpeg', 0.9);
+                link.click();
+            };
+            img.src = 'data:image/svg+xml;base64,' + btoa(data);
+        }
+
+        function downloadTwitter() {
+            const svg = document.querySelector('svg[viewBox="0 0 1200 600"]');
+            const canvas = document.createElement('canvas');
+            canvas.width = 1200;
+            canvas.height = 600;
+            const ctx = canvas.getContext('2d');
+
+            const data = new XMLSerializer().serializeToString(svg);
+            const img = new Image();
+            img.onload = function () {
+                ctx.drawImage(img, 0, 0);
+                const link = document.createElement('a');
+                link.download = 'twitter-image.jpg';
+                link.href = canvas.toDataURL('image/jpeg', 0.9);
+                link.click();
+            };
+            img.src = 'data:image/svg+xml;base64,' + btoa(data);
+        }
+    </script>
+</body>
+
+</html>

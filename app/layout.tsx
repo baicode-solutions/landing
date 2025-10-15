@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -24,7 +25,20 @@ export const metadata: Metadata = {
     "AI implementation",
     "Baicode",
     "soluciones tecnológicas",
+    "Argentina",
+    "Buenos Aires",
+    "consulting IT",
+    "Azure",
+    "microservices",
+    "React Native",
+    "OpenAI",
+    "Claude AI",
+    "automatización",
+    "transformación digital",
   ],
+  category: "technology",
+  classification: "Business",
+  referrer: "origin-when-cross-origin",
   authors: [{ name: "Baicode Team" }],
   creator: "Baicode",
   publisher: "Baicode",
@@ -80,7 +94,11 @@ export const metadata: Metadata = {
       { url: "/images/baicode-logo.png", type: "image/png" },
     ],
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
-    other: [{ rel: "manifest", url: "/manifest.json" }],
+    other: [
+      { rel: "manifest", url: "/manifest.json" },
+      { rel: "author", url: "/humans.txt" },
+      { rel: "sitemap", url: "/sitemap.xml" },
+    ],
   },
 };
 
@@ -93,7 +111,6 @@ export default function RootLayout({
     <html lang="es" className="scroll-smooth">
       <head>
         {/* favicon & manifest links now handled by metadata.icons */}
-        <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#2563eb" />
         <script
           type="application/ld+json"
@@ -152,7 +169,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        {children}
+        <GoogleTagManager gtmId="GTM-P4NVDRSB" />
+      </body>
     </html>
   );
 }
