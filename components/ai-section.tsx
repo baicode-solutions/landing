@@ -1,3 +1,4 @@
+"use client";
 import {
   Card,
   CardContent,
@@ -6,6 +7,8 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import {
   Brain,
   Cpu,
@@ -23,6 +26,19 @@ import {
 import Image from "next/image";
 
 export function AISection() {
+  const router = useRouter();
+
+  const goToContact = () => {
+    if (typeof window !== "undefined") {
+      const el = document.getElementById("contacto");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+        return;
+      }
+    }
+    // If element not found, redirect to homepage contact
+    router.push("/#contacto");
+  };
   return (
     <section
       id="inteligencia-artificial"
@@ -108,8 +124,8 @@ export function AISection() {
             </div>
 
             <Button
-              size="lg"
-              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-lg"
+              onClick={goToContact}
+              className="h-11 px-8 rounded-md text-base bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-lg"
             >
               Consulta Gratuita IA
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -132,101 +148,111 @@ export function AISection() {
 
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          <Card className="border-0 shadow-lg bg-white/80 backdrop-blur-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-            <CardHeader className="text-center pb-4">
-              <div className="bg-gradient-to-br from-purple-500 to-purple-600 p-4 rounded-2xl w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <Target className="h-8 w-8 text-white" />
-              </div>
-              <CardTitle className="text-xl text-gray-900">
-                Computer Vision
-              </CardTitle>
-              <CardDescription className="text-gray-600">
-                Reconocimiento de imágenes, análisis visual y detección de
-                objetos
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-2">
-                <li className="flex items-center gap-2 text-sm text-gray-600">
-                  <CheckCircle className="h-4 w-4 text-green-500" />
-                  Análisis de imágenes médicas
-                </li>
-                <li className="flex items-center gap-2 text-sm text-gray-600">
-                  <CheckCircle className="h-4 w-4 text-green-500" />
-                  Control de calidad automatizado
-                </li>
-                <li className="flex items-center gap-2 text-sm text-gray-600">
-                  <CheckCircle className="h-4 w-4 text-green-500" />
-                  Reconocimiento facial y OCR
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
+          <Link href="/inteligencia-artificial" className="group">
+            <Card className="border-0 shadow-lg bg-white/80 backdrop-blur-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full">
+              <CardHeader className="text-center pb-4">
+                <div className="bg-gradient-to-br from-purple-500 to-purple-600 p-4 rounded-2xl w-16 h-16 mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Target className="h-8 w-8 text-white" />
+                </div>
+                <CardTitle className="text-xl text-gray-900 group-hover:text-purple-600 transition-colors">
+                  Computer Vision
+                </CardTitle>
+                <CardDescription className="text-gray-600">
+                  Reconocimiento de imágenes, análisis visual y detección de
+                  objetos
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2 text-sm text-gray-600">
+                    <CheckCircle className="h-4 w-4 text-green-500" />
+                    Análisis de imágenes médicas
+                  </li>
+                  <li className="flex items-center gap-2 text-sm text-gray-600">
+                    <CheckCircle className="h-4 w-4 text-green-500" />
+                    Control de calidad automatizado
+                  </li>
+                  <li className="flex items-center gap-2 text-sm text-gray-600">
+                    <CheckCircle className="h-4 w-4 text-green-500" />
+                    Reconocimiento facial y OCR
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </Link>
 
-          <Card className="border-0 shadow-lg bg-white/80 backdrop-blur-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-            <CardHeader className="text-center pb-4">
-              <div className="bg-gradient-to-br from-emerald-500 to-emerald-600 p-4 rounded-2xl w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <Bot className="h-8 w-8 text-white" />
-              </div>
-              <CardTitle className="text-xl text-gray-900">
-                Agentes de IA
-              </CardTitle>
-              <CardDescription className="text-gray-600">
-                Sistemas autónomos inteligentes y multi-agentes para
-                automatización avanzada
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-2">
-                <li className="flex items-center gap-2 text-sm text-gray-600">
-                  <CheckCircle className="h-4 w-4 text-green-500" />
-                  Generación de productos de agentes
-                </li>
-                <li className="flex items-center gap-2 text-sm text-gray-600">
-                  <CheckCircle className="h-4 w-4 text-green-500" />
-                  Sistemas multi-agentes
-                </li>
-                <li className="flex items-center gap-2 text-sm text-gray-600">
-                  <CheckCircle className="h-4 w-4 text-green-500" />
-                  MCPs e integración con herramientas
-                </li>
-                <li className="flex items-center gap-2 text-sm text-gray-600">
-                  <CheckCircle className="h-4 w-4 text-green-500" />
-                  Automatizaciones inteligentes
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
+          <Link href="/inteligencia-artificial" className="group">
+            <Card className="border-0 shadow-lg bg-white/80 backdrop-blur-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full">
+              <CardHeader className="text-center pb-4">
+                <div className="bg-gradient-to-br from-emerald-500 to-emerald-600 p-4 rounded-2xl w-16 h-16 mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Bot className="h-8 w-8 text-white" />
+                </div>
+                <CardTitle className="text-xl text-gray-900 group-hover:text-emerald-600 transition-colors">
+                  Agentes de IA
+                </CardTitle>
+                <CardDescription className="text-gray-600">
+                  Sistemas autónomos inteligentes y multi-agentes para
+                  automatización avanzada
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2 text-sm text-gray-600">
+                    <CheckCircle className="h-4 w-4 text-green-500" />
+                    Generación de productos de agentes
+                  </li>
+                  <li className="flex items-center gap-2 text-sm text-gray-600">
+                    <CheckCircle className="h-4 w-4 text-green-500" />
+                    Sistemas multi-agentes
+                  </li>
+                  <li className="flex items-center gap-2 text-sm text-gray-600">
+                    <CheckCircle className="h-4 w-4 text-green-500" />
+                    MCPs e integración con herramientas
+                  </li>
+                  <li className="flex items-center gap-2 text-sm text-gray-600">
+                    <CheckCircle className="h-4 w-4 text-green-500" />
+                    Automatizaciones inteligentes
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </Link>
 
-          <Card className="border-0 shadow-lg bg-white/80 backdrop-blur-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 md:col-span-2 lg:col-span-1">
-            <CardHeader className="text-center pb-4">
-              <div className="bg-gradient-to-br from-indigo-500 to-indigo-600 p-4 rounded-2xl w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <Shield className="h-8 w-8 text-white" />
-              </div>
-              <CardTitle className="text-xl text-gray-900">
-                NLP & Chatbots
-              </CardTitle>
-              <CardDescription className="text-gray-600">
-                Procesamiento de lenguaje natural y asistentes conversacionales
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-2">
-                <li className="flex items-center gap-2 text-sm text-gray-600">
-                  <CheckCircle className="h-4 w-4 text-green-500" />
-                  Chatbots inteligentes
-                </li>
-                <li className="flex items-center gap-2 text-sm text-gray-600">
-                  <CheckCircle className="h-4 w-4 text-green-500" />
-                  Análisis de sentimientos
-                </li>
-                <li className="flex items-center gap-2 text-sm text-gray-600">
-                  <CheckCircle className="h-4 w-4 text-green-500" />
-                  Traducción automática
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
+          <Link
+            href="/inteligencia-artificial"
+            className="group md:col-span-2 lg:col-span-1"
+          >
+            <Card className="border-0 shadow-lg bg-white/80 backdrop-blur-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full">
+              <CardHeader className="text-center pb-4">
+                <div className="bg-gradient-to-br from-indigo-500 to-indigo-600 p-4 rounded-2xl w-16 h-16 mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Shield className="h-8 w-8 text-white" />
+                </div>
+                <CardTitle className="text-xl text-gray-900 group-hover:text-indigo-600 transition-colors">
+                  NLP & Chatbots
+                </CardTitle>
+                <CardDescription className="text-gray-600">
+                  Procesamiento de lenguaje natural y asistentes
+                  conversacionales
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2 text-sm text-gray-600">
+                    <CheckCircle className="h-4 w-4 text-green-500" />
+                    Chatbots inteligentes
+                  </li>
+                  <li className="flex items-center gap-2 text-sm text-gray-600">
+                    <CheckCircle className="h-4 w-4 text-green-500" />
+                    Análisis de sentimientos
+                  </li>
+                  <li className="flex items-center gap-2 text-sm text-gray-600">
+                    <CheckCircle className="h-4 w-4 text-green-500" />
+                    Traducción automática
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </Link>
         </div>
 
         {/* Stats section */}

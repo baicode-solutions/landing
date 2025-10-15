@@ -72,6 +72,16 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      // We also expose the main brand PNG as a fallback favicon (browsers will pick the first they support)
+      { url: "/images/baicode-logo.png", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+    other: [{ rel: "manifest", url: "/manifest.json" }],
+  },
 };
 
 export default function RootLayout({
@@ -82,9 +92,7 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth">
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        {/* favicon & manifest links now handled by metadata.icons */}
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#2563eb" />
         <script
@@ -105,13 +113,13 @@ export default function RootLayout({
               ],
               contactPoint: {
                 "@type": "ContactPoint",
-                telephone: "+1-555-123-4567",
+                telephone: "+54 11 3403-2295",
                 contactType: "customer service",
                 email: "contacto@baicode.com.ar",
               },
               address: {
                 "@type": "PostalAddress",
-                addressCountry: "ES",
+                addressCountry: "AR",
               },
               serviceArea: {
                 "@type": "Place",

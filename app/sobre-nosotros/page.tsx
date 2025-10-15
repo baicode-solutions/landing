@@ -59,7 +59,7 @@ export default function AboutPage() {
       </AnimatedHeader>
 
       {/* Hero Section */}
-      <section className="w-full pt-32 pb-16 md:pt-40 md:pb-24">
+      <section className="w-full pt-20 pb-16 md:pt-24 md:pb-20">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-6 text-center">
             <div className="space-y-4">
@@ -127,25 +127,36 @@ export default function AboutPage() {
                     {/* Contact Links */}
                     <div className="flex justify-center lg:justify-start gap-4">
                       <Button
-                        size="sm"
-                        variant="outline"
-                        className="p-2 h-10 w-10"
+                        className="p-2 h-10 w-10 border border-gray-300 bg-white hover:bg-gray-50"
+                        asChild
                       >
-                        <Linkedin className="h-4 w-4" />
+                        <Link
+                          href="https://www.linkedin.com/in/lolivera/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Linkedin className="h-4 w-4 text-blue-600" />
+                        </Link>
                       </Button>
                       <Button
-                        size="sm"
-                        variant="outline"
-                        className="p-2 h-10 w-10"
+                        className="p-2 h-10 w-10 border border-gray-300 bg-white hover:bg-gray-50"
+                        asChild
                       >
-                        <Mail className="h-4 w-4" />
+                        <Link href="mailto:lolivera@baicode.com.ar">
+                          <Mail className="h-4 w-4 text-gray-600" />
+                        </Link>
                       </Button>
                       <Button
-                        size="sm"
-                        variant="outline"
-                        className="p-2 h-10 w-10"
+                        className="p-2 h-10 w-10 border border-gray-300 bg-white hover:bg-gray-50"
+                        asChild
                       >
-                        <Github className="h-4 w-4" />
+                        <Link
+                          href="https://github.com/LOlivera10"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Github className="h-4 w-4 text-gray-800" />
+                        </Link>
                       </Button>
                     </div>
                   </div>
@@ -314,24 +325,16 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 md:px-6 text-center">
           <div className="max-w-3xl mx-auto space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold text-white">
-              ¿Quieres formar parte de nuestro equipo?
+              ¿Tienes un proyecto en mente?
             </h2>
             <p className="text-xl text-blue-100 leading-relaxed">
-              Si compartes nuestra pasión por la innovación tecnológica y buscas
-              desarrollar tu carrera en un ambiente desafiante, nos encantaría
-              conocerte.
+              Hablemos sobre cómo podemos ayudarte a transformar tu idea en una
+              solución tecnológica exitosa. Nuestro equipo está listo para
+              impulsar tu negocio.
             </p>
-            <div className="flex flex-col gap-4 min-[400px]:flex-row justify-center">
+            <div className="flex justify-center">
               <Button
-                size="lg"
                 className="bg-white text-blue-700 hover:bg-blue-50 hover:text-blue-800 hover:scale-105 transition-all duration-300 text-lg px-8 py-4 shadow-2xl font-semibold"
-              >
-                Únete al Equipo
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-blue-700 hover:scale-105 transition-all duration-300 text-lg px-8 py-4 font-semibold shadow-lg"
                 asChild
               >
                 <Link href="/#contacto">Contáctanos</Link>
