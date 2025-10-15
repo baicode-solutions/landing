@@ -171,7 +171,7 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         {children}
-        <GoogleTagManager gtmId="GTM-P4NVDRSB" />
+        <GoogleTagManager gtmId="G-ZGX77GC710" />
       </body>
     </html>
   );
