@@ -9,7 +9,7 @@ export function SiteFooter() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <Logo />
+              <Logo onDark />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
               Especialistas en desarrollo de software e implementación de

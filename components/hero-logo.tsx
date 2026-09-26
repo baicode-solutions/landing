@@ -6,7 +6,7 @@ export function HeroLogo() {
   return (
     <div className="flex items-center justify-center mb-8">
       <Image
-        src="/images/baicode-logo.png"
+        src="/images/brand/png/baicode-isotipo-claro.png"
         alt="Baicode Logo"
         width={120}
         height={120}

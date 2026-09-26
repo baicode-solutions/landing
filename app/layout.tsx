@@ -91,7 +91,7 @@ export const metadata: Metadata = {
       { url: "/favicon.ico", sizes: "any" },
       { url: "/favicon.svg", type: "image/svg+xml" },
       // We also expose the main brand PNG as a fallback favicon (browsers will pick the first they support)
-      { url: "/images/baicode-logo.png", type: "image/png" },
+      { url: "/images/brand/png/baicode-app-icon.png", type: "image/png" },
     ],
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
     other: [
@@ -120,7 +120,7 @@ export default function RootLayout({
               "@type": "Organization",
               name: "Baicode",
               url: "https://baicode.com",
-              logo: "https://baicode.com/images/baicode-logo.png",
+              logo: "https://baicode.com/images/brand/png/baicode-logo-completo-claro.png",
               description:
                 "Empresa líder en desarrollo de software e implementación de inteligencia artificial",
               foundingDate: "2020",

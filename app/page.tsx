@@ -132,7 +132,7 @@ export default function BaicodeLanding() {
                 <div className="flex items-center justify-center mb-8 lg:justify-start">
                   <div className="relative">
                     <Image
-                      src="/images/baicode-logo.png"
+                      src="/images/brand/png/baicode-isotipo-claro.png"
                       alt="Baicode Logo"
                       width={80}
                       height={80}
